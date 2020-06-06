@@ -97,7 +97,7 @@ app.use("/auth", authRoute);
 
 if(process.env.NODE_ENV === "production"){
   app.use(express.static("trelloapp/build"));
-  app.get("/api", (req, res)=>{
+  app.get("*", (req, res)=>{
     res.sendFile(path.resolve(__dirname, "trelloapp", "build", "index.html"));
   });
 }
