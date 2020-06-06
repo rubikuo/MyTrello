@@ -1,0 +1,16 @@
+.Footer {
+  padding: 10px auto;
+  height: 40px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: rgb(133, 180, 211);
+  word-break: break-all;
+  background-color: rgb(3, 106, 167);
+  & a {
+    color: rgb(133, 180, 211);
+    text-decoration: none;
+  }
+}

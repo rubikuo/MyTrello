@@ -1,0 +1,138 @@
+.Card {
+  width: 300px;
+  margin: 5px -5px 5px 0;
+  margin-left: -5px;
+  margin-top: 5px;
+  border-radius: 3px;
+  background-color: white;
+  padding: 10px 10px 15px 10px;
+  font-weight: 500;
+  box-shadow: 0 1px 1px grey;
+  display: flex;
+  position: relative;
+  &:hover {
+    > .Card__btn-edit {
+      display: flex;
+    }
+  }
+  &__ctn {
+    display: flex;
+    &-info {
+      width: 280px;
+      flex-direction: column;
+    }
+    &-dropDown {
+      position: relative;
+    }
+  }
+  &__btn {
+    width: 180px;
+    height: 36px;
+    margin: 3px;
+    display: flex;
+    align-items: center;
+    line-height: 1rem;
+    font-size: 1rem;
+    border-radius: 3px;
+    border: 1px solid rgb(169, 169, 169);
+    text-align: left;
+    padding: 8px;
+    font-weight: 600;
+    background-color: rgb(233, 233, 233);
+    color: rgb(46, 46, 46);
+    &:hover {
+      background-color: rgb(3, 106, 167);
+      color: white;
+      cursor: pointer;
+    }
+    &-remove {
+      background-color: rgb(255, 210, 210);
+      &:hover {
+        background-color: rgb(250, 64, 64);
+        color: white;
+      }
+    }
+
+    &-menu {
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      background-color: transparent;
+      line-height: 1rem;
+      font-size: 1rem;
+      margin-right: -5px;
+      color: rgb(150, 150, 150);
+      position: absolute;
+      right: 0px;
+      top: -5px;
+      width: 26px;
+      height: 26px;
+      border-radius: 3px;
+      border: none;
+      &:hover {
+        background-color: rgba(210, 210, 210, 0.623);
+        color: rgb(63, 63, 63);
+      }
+      &:focus {
+        background-color: rgba(208, 208, 208, 0.623);
+        color: rgb(63, 63, 63);
+      }
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  &__icon {
+    &-edit,
+    &-move,
+    &-remove {
+      margin-right: 5px;
+      font-size: 1.1rem;
+    }
+  }
+  &__title {
+    font-weight: 600;
+    color: rgb(14, 14, 14);
+  }
+  &__text {
+    margin: 5px 0 0 0;
+
+    &-desc {
+      width: 250px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      color: rgb(106, 106, 106);
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+    &-date {
+      color: rgb(135, 135, 135);
+      margin-top: 15px;
+      font-size: 0.7rem;
+    }
+  }
+  &__dropDown {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    z-index: 1;
+    right: -3px;
+    top: 30px;
+    border-radius: 2px;
+    padding: 5px;
+    box-shadow: 0px 0px 2px rgb(89, 89, 89);
+    &-show {
+      display: flex;
+    }
+    &-hide {
+      display: none;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

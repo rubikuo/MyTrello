@@ -1,0 +1,117 @@
+.Register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  flex-direction: column;
+  text-align: center;
+  min-height: calc(100vh - 80px);
+  background-color: rgb(208, 212, 215);
+  &__title {
+    font-size: 2.5em;
+    padding-bottom: 10px;
+    border-bottom: 2px solid white;
+  }
+  &__ctn {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-top: 30px;
+    &-sml {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 280px;
+      height: 56px;
+      position: relative;
+      margin-top: 20px;
+    }
+  }
+  &__userIcon {
+    height: 6rem;
+    width: 6rem;
+    padding: 6px;
+    position: absolute;
+    top: -30px;
+    color: rgb(220, 220, 220);
+    background-color: #1293d6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0px 0px 2px rgb(74, 72, 72);
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    min-height: 65vh;
+    padding: 20px 0;
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.639);
+    border-radius: 3px;
+    box-shadow: 0px 0px 2px rgb(147, 147, 147);
+  }
+
+  &__input {
+    width: 280px;
+    height: 56px;
+    line-height: 20px;
+    font-size: 1.2rem;
+    border-radius: 3px;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 0 12px 0 12px;
+    &::placeholder {
+      color: rgb(154, 154, 154);
+      font-size: 1.1rem;
+    }
+    &:focus {
+      outline: none;
+      caret-color: #004bee;
+      ~ div {
+        transform: scaleX(1);
+        opacity: 1;
+      }
+    }
+    &--underline {
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #1293d6;
+      transform: scaleX(0);
+      transition: all 0.15s linear;
+    }
+  }
+  &__link {
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    width: 80%;
+    margin-top: 20px;
+  }
+  &__btn {
+    background: #1293d6;
+    padding: 10px;
+    border-radius: 2px;
+    margin-top: 20px;
+    width: 60%;
+    border: none;
+    color: white;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__text-error {
+    margin: 10px 0 -5px 0;
+    color: red;
+    font-size: 13px;
+    font-weight: 500;
+  }
+}

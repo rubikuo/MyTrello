@@ -1,0 +1,198 @@
+// @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+
+.Create,
+.Remove,
+.Edit,
+.Move {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(179, 179, 179, 0.495);
+  position: absolute;
+  top: 0;
+  z-index: 9999999999999;
+  &__modal {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 450px;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 0.3rem;
+    box-shadow: 0 0 5px 2px rgba(104, 103, 103, 0.612);
+    // position: relative;
+    &-headline {
+      min-width: 200px;
+      max-width: 400px;
+      display: flex;
+      margin-bottom: 10px;
+      padding-left: 0px;
+      font-size: 1.3rem;
+      max-width: 150px;
+      color: #1293d6;
+    }
+  }
+  &__text {
+    margin: 35px 0;
+    align-self: center;
+    font-size: 1rem;
+    &-sub {
+      font-weight: 600;
+      color: #1293d6;
+    }
+  }
+  &__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  &__label {
+    margin: 5px 0 10px 25px;
+    font-weight: 500;
+  }
+  &__input {
+    width: 90%;
+    line-height: 1.5rem;
+    align-self: center;
+    margin-bottom: 10px;
+    border: 1px solid rgb(182, 180, 180);
+    border-radius: 0.2rem;
+    font-size: 1rem;
+    padding: 5px 10px;
+    &:focus {
+      outline: none;
+    }
+    &-cardDesc {
+      height: 100px;
+      resize: none;
+    }
+    &-select {
+      margin-bottom: 20px;
+      height: 2rem;
+      line-height: 2rem;
+      padding: 5px;
+      width: 88%;
+      font-size: 0.9rem;
+    }
+  }
+  &__icon {
+    margin-right: 5px;
+  }
+  &__btnCtn {
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-end;
+    width: 130px;
+    margin-right: 40px;
+  }
+  &__btn {
+    line-height: 18px;
+    font-weight: 500;
+    background-color: rgb(255, 255, 255);
+    letter-spacing: 0.06rem;
+    border: 1px solid #ddd;
+    border-radius: 0.2rem;
+    padding: 5%;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 12px;
+    min-width: 65px;
+    text-align: center;
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+    &-cancel {
+      color: rgb(84, 84, 84);
+      background-color: #f0f0f0;
+      &:hover {
+        background-color: #dedede;
+      }
+    }
+    &-create,
+    &-remove,
+    &-update {
+      color: #fff;
+      background-color: #1293d6;
+      border: 1px solid #1293d6;
+      margin-left: 10px;
+      &:hover {
+        background-color: #2da6e8;
+      }
+    }
+  }
+}
+
+.Move {
+  &__modal {
+    position: relative;
+  }
+  &__text {
+    align-self: start;
+    margin: 10px 0 20px 30px;
+  }
+  &__btnCtn {
+    margin-right: 42px;
+  }
+  &__btn {
+    &-close {
+      &--top {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        text-align: center;
+        line-height: 1.4rem;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        color: rgb(148, 148, 148);
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        &:hover {
+          background-color: rgba(213, 210, 210, 0.623);
+          border-radius: 3px;
+        }
+        &:focus {
+          background-color: rgba(198, 198, 198, 0.623);
+          color: rgb(69, 69, 69);
+          outline: none;
+        }
+      }
+    }
+  }
+  &__icon {
+    &-close {
+      margin: 0 auto;
+    }
+  }
+}
+.Edit {
+  &__modal {
+    width: 480px;
+    height: 380px;
+  }
+  &__btnCtn {
+    margin-right: 40px;
+  }
+}
+
+.Create,
+.Edit {
+  &__text {
+    &-error {
+      margin: 0px 0 5px 30px;
+      color: red;
+      font-size: 13px;
+      font-weight: 500;
+    }
+  }
+}

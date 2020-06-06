@@ -1,0 +1,125 @@
+.Board {
+  background-color: rgb(81, 160, 210);
+  min-height: calc(100vh - 80px);
+  &__title {
+    height: 35px;
+    line-height: 2rem;
+    margin-right: 10px;
+    padding: 0px 10px;
+    color: rgb(255, 255, 255);
+    border-radius: 3px;
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(161, 209, 241, 0.523);
+    }
+    &--hide {
+      display: none;
+    }
+    &--show {
+      display: block;
+    }
+    &-noList {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &__icon {
+    &-list {
+      margin-right: 5px;
+    }
+    &-add {
+      font-size: 1.3rem;
+      margin-left: -5px;
+    }
+  }
+  &__ctn {
+    display: flex;
+    &-wrap {
+      display: block;
+      padding: 10px;
+      background-color: rgb(73, 154, 205);
+      min-height: calc(100vh - 80px);
+    }
+    &-header {
+      align-items: center;
+      margin: 2px 0 5px 15px;
+      height: 50px;
+    }
+    &-boardTitle {
+      margin-left: -10px;
+    }
+    &-noList {
+      width: 100%;
+      min-height: 500px;
+      justify-content: center;
+      align-items: center;
+      color: rgb(190, 186, 186);
+    }
+    &-lists {
+      overflow-x: auto;
+      overflow-y: hidden;
+      min-height: 500px;
+    }
+    &-list {
+      display: inline-block;
+    }
+  }
+  &__divider {
+    float: left;
+    border-left: 1px solid hsla(0, 0%, 100%, 0.24);
+    height: 16px;
+    margin: 8px 10px 12px 0px;
+  }
+  &__input {
+    width: 270px;
+    height: 35px;
+    border-radius: 3px;
+    border: none;
+    padding: 10px;
+    box-shadow: 0 1px 1px grey;
+    line-height: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 5px 10px 5px 0;
+
+    &:focus {
+      outline: none;
+    }
+    &-boardTitle {
+      width: 250px;
+      &--hide {
+        display: none;
+      }
+      &--show {
+        display: block;
+      }
+    }
+    &-cardDesc {
+      height: 5rem;
+    }
+  }
+  &__btn {
+    display: flex;
+    border: none;
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(165, 208, 230, 0.728);
+    }
+    &-create {
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(161, 209, 241, 0.523);
+      width: 160px;
+      height: 35px;
+      padding: 0px 10px;
+      border-radius: 3px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: rgb(255, 255, 255);
+    }
+  }
+}

@@ -1,0 +1,168 @@
+.List {
+  width: 320px;
+
+  background-color: rgb(235, 236, 240);
+  border-radius: 3px;
+  padding: 5px 0 10px 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+
+  &__ctn {
+    display: flex;
+    width: 290px;
+    &-header {
+      height: 35px;
+      padding: 2px 0 0px 5px;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      margin: 5px 0;
+    }
+    &-listTitle {
+      width: 260px;
+      margin-left: -10px;
+    }
+    &-cards {
+      flex-direction: column;
+    }
+    &-input {
+      width: 310px;
+      margin-left: -5px;
+      &--hide {
+        display: none;
+      }
+      &--show {
+        display: block;
+      }
+    }
+    &-btns {
+      padding: 5px;
+      margin-left: -5px;
+    }
+  }
+  &__title {
+    // display: none;
+    color: rgb(18, 18, 18);
+    margin-left: 10px;
+    text-shadow: 0 1px 2px rgb(205, 205, 205);
+    &:hover {
+      cursor: pointer;
+    }
+    &--hide {
+      display: none;
+    }
+    &--show {
+      display: block;
+    }
+  }
+  &__icon {
+    &-add {
+      font-size: 1.2rem;
+    }
+  }
+  &__btn {
+    font-weight: 500;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 3% 0;
+    margin-top: 3%;
+    font-size: 0.9rem;
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+    &-delete {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      font-size: 1.4rem;
+      padding: 5px;
+      margin-right: -5px;
+      color: rgb(148, 148, 148);
+      background-color: transparent;
+      border: none;
+      position: absolute;
+      right: 0px;
+      top: -5px;
+
+      &:hover {
+        background-color: rgba(213, 210, 210, 0.623);
+        border-radius: 3px;
+      }
+      &:focus {
+        background-color: rgba(176, 176, 176, 0.623);
+        color: rgb(69, 69, 69);
+      }
+    }
+    &-add {
+      width: 290px;
+      font-size: 1rem;
+      margin-top: 5px;
+      padding-left: 5px;
+      color: rgb(120, 131, 151);
+      background-color: transparent;
+      border: none;
+      &:hover {
+        background-color: rgba(213, 210, 210, 0.623);
+      }
+      &:focus {
+        border-radius: 3px;
+        background-color: rgba(62, 62, 62, 0.247);
+      }
+      &--hide {
+        display: none;
+      }
+      &--show {
+        display: flex;
+      }
+    }
+    &-create {
+      color: #fff;
+      background-color: #1293d6;
+      margin: 0;
+      margin-right: 5px;
+      padding: 3%;
+    }
+    &-cancel {
+      color: rgb(84, 84, 84);
+      padding: 3%;
+      margin: 0;
+    }
+  }
+  &__input {
+    width: 300px;
+    border-radius: 3px;
+    border: none;
+    resize: none;
+    padding: 10px;
+    box-shadow: 0 1px 1px grey;
+    line-height: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 5px 0;
+
+    &:focus {
+      outline: none;
+    }
+    &-listTitle {
+      width: 260px;
+      // display: none;
+      &--hide {
+        display: none;
+      }
+      &--show {
+        display: block;
+      }
+    }
+    &-cardDesc {
+      height: 5rem;
+    }
+  }
+}

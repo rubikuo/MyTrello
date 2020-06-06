@@ -1,0 +1,100 @@
+.Boards {
+  min-height: calc(100vh - 80px);
+  background-color: rgb(81, 160, 210);
+  padding: 30px 10px;
+  position: relative;
+  &__ctn {
+    &-wrap {
+      max-width: 685px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  }
+  &__title {
+    &-noBoard {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-40%, -50%);
+      color: rgb(190, 186, 186);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__box {
+    width: 180px;
+    height: 100px;
+    border: 1px solid rgb(208, 208, 208);
+    flex-grow: 1 1 1;
+    display: flex;
+    border-radius: 3px;
+    margin: 10px;
+    position: relative;
+    font-size: 1rem;
+    &:hover {
+      cursor: pointer;
+    }
+
+    &-addBoard {
+      justify-content: center;
+      align-items: center;
+      background-color: whitesmoke;
+      font-weight: 400;
+      &:hover {
+        background-color: rgb(232, 232, 232);
+      }
+    }
+    &-board {
+      padding: 10px 15px;
+      font-weight: 700;
+      color: white;
+      background-color: rgb(120, 146, 213);
+      font-size: 1.1rem;
+      &:nth-child(even) {
+        background-color: rgb(48, 56, 136);
+        padding: 10px 15px;
+        &:hover {
+          background-color: rgb(63, 70, 154);
+        }
+      }
+      &:hover {
+        background-color: rgb(129, 160, 240);
+      }
+    }
+  }
+  &__btn {
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+    &-delete {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.4rem;
+      z-index: 1;
+      color: rgb(255, 255, 255);
+      background-color: transparent;
+      border: none;
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      &:hover {
+        background-color: rgba(213, 210, 210, 0.623);
+        border-radius: 3px;
+      }
+      &:focus {
+        background-color: rgba(198, 198, 198, 0.623);
+        color: rgb(69, 69, 69);
+      }
+    }
+  }
+}
