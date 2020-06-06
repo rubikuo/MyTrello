@@ -7,7 +7,7 @@ const path = require("path");
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 8020;
-// const baseRoute = require("./routes/baseRoute");
+const baseRoute = require("./routes/baseRoute");
 const trelloRoute = require("./routes/trelloRoute");
 const authRoute = require("./routes/authRoute");
 const session = require("express-session");
@@ -91,7 +91,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// app.use("/", baseRoute);
+app.use("/", baseRoute);
 app.use("/api", trelloRoute);
 app.use("/auth", authRoute);
 
