@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 const devConnection = process.env.DB_STRING_DEV;
-// const prodConnection = process.env.DB_STRING_PROD;
+const prodConnection = process.env.MONGODB_URI;
 const connectOptions = { useUnifiedTopology: true, useNewUrlParser: true };
 
 let connection;
@@ -12,7 +12,7 @@ let connection;
 mongoose.Promise = global.Promise;
 // connect to MongoDb
 
-mongoose.connect(devConnection, connectOptions);
+mongoose.connect(prodConnection || devConnection, connectOptions);
 // make connection instance
 connection = mongoose.createConnection(devConnection, connectOptions);
 
