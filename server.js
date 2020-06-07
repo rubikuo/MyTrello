@@ -18,6 +18,7 @@ const passport = require("passport");
 /*******  Passport Authentication *****/
 require("./config/passport")(passport);
 
+
 //session Store, to store session's information
 const MongoStore = require("connect-mongo")(session);
 const sessionStore = new MongoStore({
@@ -90,23 +91,30 @@ app.use((req, res, next) => {
   next();
 });
 
+
+
+
 // app.use(express.static(path.join(__dirname, '/trelloapp/build')));
 
 // app.get('*', function(req, res) {
 //   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 // });
 
-if (process.env.NODE_ENV === "production") {
+if(process.env.NODE_ENV === "production"){
   console.log("production!");
-  app.use(express.static(path.join(__dirname + "trelloapp/public")));
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "/trelloapp/public", "index.html"));
-  });
+  app.use(express.static(path.join(__dirname + "/trelloapp/build")));
+  app.get("*", (req, res)=>{
+    res.sendFile(path.join(__dirname, '/trelloapp/public', 'index.html'))
+});
 }
 
+
 app.use("/", baseRoute);
-app.use("/auth", authRoute);
+
 app.use("/api", trelloRoute);
+
+app.use("/auth", authRoute);
+
 
 app.listen(PORT, () => {
   console.log(`Server is on ${PORT}`);
