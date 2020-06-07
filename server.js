@@ -90,28 +90,28 @@ app.use((req, res, next) => {
 
   next();
 });
-console.log("hej")
-app.use("/", baseRoute);
-console.log("hello")
-app.use("/api", trelloRoute);
-console.log("hello2")
-app.use("/auth", authRoute);
+
 
 
 
 // app.use(express.static(path.join(__dirname, '/trelloapp/build')));
 
 // app.get('*', function(req, res) {
-//   res.sendFile(path.join(__dirname, '/trelloapp/public/index.html'))
+//   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 // });
 
 if(process.env.NODE_ENV === "production"){
   console.log("production!");
-  app.use(express.static(path.join(__dirname + "trelloapp/build")));
+  app.use(express.static(path.join(__dirname + "/trelloapp/build")));
   app.get("*", (req, res)=>{
-    res.sendFile(path.join(__dirname = 'trelloapp/build/index.html'))
+    res.sendFile(path.join(__dirname, '/trelloapp/public', 'index.html'))
 });
 }
+
+
+app.use("/", baseRoute);
+app.use("/api", trelloRoute);
+app.use("/auth", authRoute);
 
 
 app.listen(PORT, () => {
