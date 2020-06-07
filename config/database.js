@@ -18,6 +18,7 @@ if (process.env.NODE_ENV === "production") {
     // make connection instance
     connection = mongoose.createConnection(prodConnection, connectOptions);
 } else {
+  console.log("dev", devConnection)
     mongoose.connect(devConnection, connectOptions);
     // make connection instance
     connection = mongoose.createConnection(devConnection, connectOptions);

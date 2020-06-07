@@ -90,9 +90,11 @@ app.use((req, res, next) => {
 
   next();
 });
-
+console.log("hej")
 app.use("/", baseRoute);
+console.log("hello")
 app.use("/api", trelloRoute);
+console.log("hello2")
 app.use("/auth", authRoute);
 
 if(process.env.NODE_ENV === "production"){
