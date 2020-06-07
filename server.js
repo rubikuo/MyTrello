@@ -97,12 +97,16 @@ app.use("/api", trelloRoute);
 console.log("hello2")
 app.use("/auth", authRoute);
 
-
+if(process.env.NODE_ENV === "production"){
   console.log("production!");
   app.use(express.static(path.join(__dirname + "/trelloapp/build")));
-  app.get("*", (req, res)=>{
-    res.sendFile(path.join(__dirname, '/trelloapp/build', 'index.html'))
-});
+  app.get("*", (req, res) => {
+    let url = path.join(__dirname, '../trelloapp/build', 'index.html');
+    if (!url.startsWith('/app/')) // since we're on local windows
+      url = url.substring(1);
+    res.sendFile(url);
+  });
+}
 
 
 app.listen(PORT, () => {
