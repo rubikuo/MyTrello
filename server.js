@@ -97,13 +97,12 @@ app.use("/api", trelloRoute);
 console.log("hello2")
 app.use("/auth", authRoute);
 
-if(process.env.NODE_ENV === "production"){
+
   console.log("production!");
   app.use(express.static(path.join(__dirname + "/trelloapp/build")));
   app.get("*", (req, res)=>{
     res.sendFile(path.join(__dirname, '/trelloapp/build', 'index.html'))
 });
-}
 
 
 app.listen(PORT, () => {
