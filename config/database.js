@@ -12,8 +12,9 @@ let connection;
 // ES6 Promise
 mongoose.Promise = global.Promise;
 // connect to MongoDb
-if (process.envNODE_ENV === "production") {
+if (process.env.NODE_ENV === "production") {
     mongoose.connect(prodConnection, connectOptions);
+    console.log("pro", prodConnection)
     // make connection instance
     connection = mongoose.createConnection(prodConnection, connectOptions);
 } else {
