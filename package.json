@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "install-client": "cd trelloapp && npm install",
+    "install-client": "npm install --prefix trelloapp",
     "start": "node server.js",
     "server": "nodemon server.js",
-    "client": "cd trelloapp && npm start",
+    "client": "npm start --prefix trelloapp",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false cd trelloapp && npm install && npm run build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix trelloapp && npm run build --prefix trelloapp"
   },
   "author": "",
   "license": "ISC",
