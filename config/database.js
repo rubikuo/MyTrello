@@ -12,9 +12,9 @@ let connection;
 mongoose.Promise = global.Promise;
 // connect to MongoDb
 
-mongoose.connect(prodConnection || "mongodb://mia:mia123@ds149324.mlab.com:49324/heroku_bfqnzn9k", connectOptions);
+mongoose.connect(prodConnection || devConnection, connectOptions);
 // make connection instance
-connection = mongoose.createConnection(devConnection, connectOptions);
+connection = mongoose.createConnection(prodConnection || devConnection, connectOptions);
 
 //to check if the connection is sucessful or not
 mongoose.connection
