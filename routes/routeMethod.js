@@ -30,7 +30,7 @@ const getAllBoards = (req, res) => {
     })
     .catch((error) => {
       console.error(error);
-      res.status(500).end();
+      res.status(500).json(error);
     });
 };
 
