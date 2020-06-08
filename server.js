@@ -110,9 +110,7 @@ if(process.env.NODE_ENV === "production"){
 
 
 app.use("/", baseRoute);
-
 app.use("/api", trelloRoute);
-
 app.use("/auth", authRoute);
 
 

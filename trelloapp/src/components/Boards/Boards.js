@@ -36,7 +36,7 @@ const Boards = () => {
         setLoading(false);
       })
       .catch((error) => {
-        console.log("error", error.response);
+        console.log("error", error);
         if (error.response.status === 409) {
           setRedirect(true);
           localStorage.setItem("user", null);
