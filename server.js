@@ -100,6 +100,9 @@ app.use((req, res, next) => {
 //   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 // });
 
+app.use("/auth", authRoute);
+app.use("/api", trelloRoute);
+
 if(process.env.NODE_ENV === "production"){
   console.log("production!");
   app.use(express.static(path.join(__dirname + "/trelloapp/build")));
@@ -110,8 +113,7 @@ if(process.env.NODE_ENV === "production"){
 
 
 app.use("/", baseRoute);
-app.use("/auth", authRoute);
-app.use("/api", trelloRoute);
+
 
 
 app.listen(PORT, () => {
