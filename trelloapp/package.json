@@ -1,7 +1,7 @@
 {
   "name": "trelloapp",
   "version": "0.1.0",
-  "homepage": ".",
+  "homepage": "https://mytrellos.herokuapp.com/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
