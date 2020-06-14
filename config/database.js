@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 // access to variables set in the .env file via `process.env.VARIABLE_NAME` syntax
 require('dotenv').config();
 
@@ -12,6 +11,7 @@ let connection;
 // ES6 Promise
 mongoose.Promise = global.Promise;
 // connect to MongoDb
+// heroku #2 
 if (process.env.NODE_ENV === "production") {
     mongoose.connect(prodConnection, connectOptions);
     console.log("pro", prodConnection)
@@ -31,8 +31,6 @@ mongoose.connection.once("open", function () {
 }).on("error", function (error) {
     console.log("Connection error: ", error);
 })
-
-
 
 
 module.exports = connection;

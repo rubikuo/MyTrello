@@ -1,17 +1,21 @@
 // Gives us access to variables set in the .env file via `process.env.VARIABLE_NAME` syntax
 
+// 當在develop的狀態下 使用local的ENV file(因為有密碼等資料所以不會上傳到github)
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
-const path = require("path");
+const path = require("path"); 
 const express = require("express");
 const app = express();
+
 const PORT = process.env.PORT || 8020;
+
 const baseRoute = require("./routes/baseRoute");
 const trelloRoute = require("./routes/trelloRoute");
 const authRoute = require("./routes/authRoute");
+
 const session = require("express-session");
-// get the connection instance
+/******** get the mongo connection instance *****/
 const connection = require("./config/database");
 const flash = require("express-flash");
 const passport = require("passport");
@@ -53,6 +57,7 @@ app.use(function (req, res, next) {
 
 //parse json
 // app.use(express.json());
+
 app.use((req, res, next) => {
   // Check that Content-Type: application/json
   if (req.is("json")) {
@@ -91,29 +96,22 @@ app.use((req, res, next) => {
   next();
 });
 
-
-
-
-// app.use(express.static(path.join(__dirname, '/trelloapp/build')));
-
-// app.get('*', function(req, res) {
-//   res.sendFile(path.join(__dirname, 'build', 'index.html'));
-// });
-
+// 注意如果deploy到Heroku 必須把這個route 放在以下 production 的設定之前
 app.use("/auth", authRoute);
 app.use("/api", trelloRoute);
 
 if(process.env.NODE_ENV === "production"){
   console.log("production!");
+  // relative path to build folder in react app
   app.use(express.static(path.join(__dirname + "/trelloapp/build")));
+  // relative path to index.html file in react app
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'trelloapp', 'build', 'index.html'));
   });
 }
 
-
+// 這個route 放在production 的設定之後
 app.use("/", baseRoute);
-
 
 
 app.listen(PORT, () => {
