@@ -3,15 +3,10 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { FaUnlock, FaPen } from "react-icons/fa";
 import MemoHeader from "../Header/Header";
-import Image from "../Image/Image";
+import CoffeeBg from "../Image/Coffee2.svg";
 import "./Home.scss";
 
 const Home = () => {
-  const [images] = useState([
-    { id: 1, name: "image-one" },
-    { id: 2, name: "image-two" },
-    { id: 3, name: "image-three" },
-  ]);
   const [helmetTitle, setHelmetTitle] = useState("");
 
   useEffect(() => {
@@ -25,16 +20,14 @@ const Home = () => {
       <Helmet>
         <title>MyTrello - {helmetTitle}</title>
       </Helmet>
-      <MemoHeader page="home" user={user} />
+      {/* <MemoHeader page="home" user={user} /> */}
       <div className="Home">
-        {/* <h1>Welcome to MyTrello!</h1> */}
-        <div className="Home__ctn-img">
-          {images.map((image) => {
-            return (
-              <Image key={image.id} className="Home__img" id={image.name} />
-            );
-          })}
-        </div>
+      <img src={CoffeeBg} alt="coffee" className="Home__img-bg"/>
+      <section className="Home__section">
+      <article>
+        <h1 className="Home__section-title">Welcome to MyTrello</h1>
+        <p className="Home__section-intro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt itaque officiis cupiditate. Maxime ea repellat repellendus perferendis eum, consequatur aut vero nemo tenetur sint odit consequuntur quasi nisi rerum quo?</p>
+      </article>
         {user === null ? (
           <>
             <Link to="/login" className="Home__ctn-smlLinks">
@@ -53,6 +46,7 @@ const Home = () => {
             <span style={{ margin: "0" }}>Register</span>
           </Link>
         )}
+        </section>
       </div>
     </HelmetProvider>
   );

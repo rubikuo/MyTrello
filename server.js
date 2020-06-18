@@ -1,4 +1,3 @@
-// Gives us access to variables set in the .env file via `process.env.VARIABLE_NAME` syntax
 
 // 當在develop的狀態下 使用local的ENV file(因為有密碼等資料所以不會上傳到github)
 if (process.env.NODE_ENV !== "production") {
