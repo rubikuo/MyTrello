@@ -10,24 +10,24 @@
     rgba(255, 255, 236, 1) 21%,
     rgba(74, 121, 223, 1) 100%
   );
-  &-loggedIN {
+  &-loggedIn {
     height: calc(100vh - 70px);
   }
   &__img {
-    &-bg {
+    &-coffee {
       position: absolute;
       bottom: 0;
       right: 0;
       max-width: 300px;
-      width: 50%;
+      width: 40%;
     }
     &-todolist {
       position: absolute;
-      bottom: -5%;
-      right: 320px;
-      z-index: 0;
-      max-width: 300px;
-      width: 45%;
+      bottom: -30%;
+      right: 280px;
+      z-index: 1;
+      max-width: 500px;
+      // width: 45%;
       transform: rotate(-8deg);
     }
   }
@@ -35,17 +35,214 @@
   &__section {
     position: absolute;
     left: 10%;
-    top: 30%;
-    width: 40%;
+    top: 20%;
+    text-shadow: 2px 1px 1px rgb(220, 220, 220);
+    width: 500px;
     text-align: left;
+    z-index: 2;
+    padding-left: 12px;
+    border-radius: 3px;
     &-intro {
       line-height: 1.6rem;
       font-size: 1.2rem;
       letter-spacing: 0.9px;
+      display: flex;
     }
     &-title {
       font-size: 2.5rem;
       margin-bottom: 1rem;
+      color: black;
+      text-shadow: 1px 1px 1px white;
+    }
+  }
+  &__ctn {
+    &-smlLinks {
+      width: 120px;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 40px 10px 20px 0px;
+      color: rgb(255, 255, 255);
+      background-color: #026ca5;
+      border-radius: 3px;
+      text-decoration: none;
+      text-shadow: none;
+      letter-spacing: 1px;
+      box-shadow: 0px 0px 4px 1px #ffffff;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-height: 768px) {
+  .Home {
+    &__img {
+      &-coffee {
+        bottom: 0;
+
+        max-width: 300px;
+        width: 40%;
+      }
+      &-todolist {
+        bottom: -18%;
+        left: 28%;
+        z-index: 0;
+        // width: 45%;
+        transform: rotate(-8deg);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-height: 1024px) {
+  .Home {
+    height: calc(100vh - 255px);
+    &__section {
+      width: 85%;
+      margin: 0 auto;
+      top: 12%;
+    }
+    &__img {
+      &-coffee {
+        bottom: 0;
+        right: 0%;
+      }
+      &-todolist {
+        bottom: -7%;
+        left: 10%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .Home {
+    &__section {
+      width: 80%;
+    }
+    &__img {
+      &-todolist {
+        bottom: -35%;
+        right: 200px;
+        z-index: 0;
+        transform: rotate(-8deg);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  .Home {
+    &__img {
+      &-todolist {
+        left: -80px;
+        bottom: -22%;
+        z-index: 0;
+        width: 400px;
+        transform: rotate(-8deg);
+      }
+    }
+  }
+}
+
+// iphone 6/7/8 plus
+@media only screen and (max-width: 414px) and (min-height: 736px) {
+  .Home {
+    &__img {
+      &-todolist {
+        bottom: -30px;
+        width: 350px;
+      }
+    }
+    &__section {
+      padding: 0px;
+      top: 15%;
+      &-intro {
+        margin-bottom: 10px;
+        font-size: 1.4rem;
+      }
+      &-title {
+        font-size: 2rem;
+      }
+    }
+
+    &__ctn {
+      &-smlLinks {
+        width: 100%;
+        margin: 20px 0 0px 0;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+// iphone 6/7/8
+@media only screen and (max-width: 375px) and (min-height: 667px) {
+  .Home {
+    &__section {
+      width: 80%;
+      margin-top: -15%;
+      &-intro {
+        margin-bottom: 20px;
+      }
+      &-title {
+        font-size: 1.8rem;
+      }
+    }
+    &__ctn {
+      &-smlLinks {
+        width: 100%;
+        height: 35px;
+        margin: 15px 0 0 0;
+      }
+    }
+
+    &__img {
+      &-todolist {
+        bottom: -5%;
+        left: -5%;
+        z-index: 0;
+        width: 250px;
+        transform: rotate(-8deg);
+      }
+    }
+  }
+}
+
+// iphone 5/SE
+@media only screen and (max-width: 320px) and (min-height: 568px) {
+  .Home {
+    &__section {
+      width: 80%;
+      margin-top: -10%;
+      &-intro {
+        font-size: 1.1rem;
+      }
+      &-title {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+      }
+    }
+    &__ctn {
+      &-smlLinks {
+        width: 100%;
+        height: 30px;
+        margin: 10px 0 0 0;
+        background-color: #026ca5;
+        border-radius: 3px;
+        font-size: 1rem;
+        letter-spacing: 1px;
+      }
+    }
+
+    &__img {
+      &-todolist {
+        bottom: -10%;
+        left: -10%;
+        z-index: 0;
+        width: 250px;
+        transform: rotate(-8deg);
+      }
     }
   }
 }

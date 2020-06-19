@@ -40,11 +40,11 @@ const Home = () => {
       {user !== null && <MemoHeader page="home" user={user} logout={logout} />}
 
       <div className={user === null ? "Home" : "Home Home-loggedIn"}>
-        <img src={CoffeeBg} alt="coffee" className="Home__img-bg" />
+        <img src={CoffeeBg} alt="coffee" className="Home__img-coffee" />
         <img src={TodoListImg} alt="todolist" className="Home__img-todolist" />
         <section className="Home__section">
           <article>
-            {user === null ? (<> <h1 className="Home__section-title">Welcome to MyTrello</h1> <p className="Home__section-intro">MyTrello’s boards, lists, and cards enable you to organize and prioritize your todos in a fun, flexible, and rewarding way. </p> </>) : (<><h1 className="Home__section-title">Hi ! {user.username}</h1>  <p className="Home__section-intro"> You are currently logged in. <br />May your day is fulfilled with MyTrello! </p></>)}
+            {user === null ? (<> <h1 className="Home__section-title">Welcome to MyTrello</h1> <p className="Home__section-intro">MyTrello’s boards, lists, and cards enable you to organize and prioritize your todos in a fun, flexible, and rewarding way. </p> </>) : (<><h1 className="Home__section-title">Hi ! {user.username}</h1>  <p className="Home__section-intro"> You are currently logged in. <br />May your day be fulfilled with MyTrello! </p></>)}
 
           </article>
           {user === null ? (
