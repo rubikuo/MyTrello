@@ -5,8 +5,9 @@
   padding-top: 20px;
   flex-direction: column;
   text-align: center;
-  min-height: calc(100vh - 80px);
-  background-color: rgb(208, 212, 215);
+  min-height: calc(100vh - 70px);
+  background: rgb(255,255,236);
+  background: linear-gradient(149deg, rgba(255,255,236,1) 21%, rgba(74,121,223,1) 100%);
   &__title {
     font-size: 2.5em;
     padding-bottom: 10px;

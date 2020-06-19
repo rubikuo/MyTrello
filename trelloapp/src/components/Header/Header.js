@@ -31,11 +31,7 @@ const Header = ({ page, logout, user }) => {
         ) : null}
       </div>
 
-      {page === "home" && user === null ? (
-        <div className="Header__ctn Header__ctn-mid--welcome">
-          <p className="Header__text-logo">Welcome to MyTrello</p>
-        </div>
-      ) : (
+      {page === "home" && user === null ? null : (
         <div className="Header__ctn Header__ctn-mid">
           <p className="Header__text-logo">
             <FaTrello className="Header__icon Header__icon-logo" /> MyTrello
@@ -66,7 +62,13 @@ const Header = ({ page, logout, user }) => {
           <Link title="Register" to="/register" className="Header__link">
             <FaPen className="Header__icon Header__icon-pen" /> Register
           </Link>
-        ) : null}
+        ) : page === "home" && user !== null ? <button
+          title="Log Out"
+          className="Header__btn Header__btn-logOut"
+          onClick={logout}
+        >
+          <AiOutlineLogout className=" Header__iconHeader__icon-logOut" />
+        </button> : null}
       </div>
     </header>
   );

@@ -3,81 +3,49 @@
   height: calc(100vh - 30px);
   text-align: center;
   position: relative;
-  background: rgb(255,255,236);
-  background: linear-gradient(149deg, rgba(255,255,236,1) 21%, rgba(74,121,223,1) 100%);
-  &__img{
-    &-bg{
+  overflow: hidden;
+  background: rgb(255, 255, 236);
+  background: linear-gradient(
+    149deg,
+    rgba(255, 255, 236, 1) 21%,
+    rgba(74, 121, 223, 1) 100%
+  );
+  &-loggedIN {
+    height: calc(100vh - 70px);
+  }
+  &__img {
+    &-bg {
       position: absolute;
       bottom: 0;
       right: 0;
-      max-width: 450px;
+      max-width: 300px;
       width: 50%;
+    }
+    &-todolist {
+      position: absolute;
+      bottom: -5%;
+      right: 320px;
+      z-index: 0;
+      max-width: 300px;
+      width: 45%;
+      transform: rotate(-8deg);
     }
   }
 
-
-  &__section{
+  &__section {
     position: absolute;
     left: 10%;
     top: 30%;
     width: 40%;
-    &-intro{
-     line-height: 1.3rem;
-     font-size: 1.2rem;
-     letter-spacing: 0.9px;
+    text-align: left;
+    &-intro {
+      line-height: 1.6rem;
+      font-size: 1.2rem;
+      letter-spacing: 0.9px;
     }
-    &-title{
-      font-size: 2.2rem;
+    &-title {
+      font-size: 2.5rem;
       margin-bottom: 1rem;
     }
   }
-  &__ctn {
-    &-img {
-      width: 60%;
-      height: 50%;
-      display: flex;
-      margin: 0 auto 30px auto;
-      padding-top: 40px;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
-    &-smlLinks {
-      width: 150px;
-      height: 40px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin: 40px 20px 20px 20px;
-      color: rgb(255, 255, 255);
-      background-color: #1293d6;
-      border-radius: 3px;
-      text-decoration: none;
-    }
-  }
-  &__img {
-    width: 38%;
-    height: auto;
-    position: absolute;
-  }
 }
-
-#image-one {
-  left: 0;
-  z-index: 0;
-  transform: rotate(15deg);
-}
-
-#image-two {
-  transform: rotate(8deg);
-  left: 32%;
-  z-index: 1;
-}
-
-#image-three {
-  left: 68%;
-  transform: rotate(-10deg);
-}
-
-
-
