@@ -123,3 +123,22 @@
     }
   }
 }
+
+@media only screen and (max-width: 375px) and (min-height: 667px) {
+  .Board{
+    min-height: calc(100vh - 300px);
+    &__ctn {
+      &-wrap {
+       height: 200px;
+        // background-color: white;
+
+      }
+      &-lists {
+        height: 100px;
+        overflow: scroll;
+
+      }
+    }
+  }
+
+}
