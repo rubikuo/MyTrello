@@ -25,10 +25,10 @@
       margin-left: -10px;
     }
     &-cardsWrap{
-      max-height: 560px;
+      max-height: calc(100vh - 220px);
       overflow: scroll;
       background-color: transparent;
-      
+
     }
     &-cards {
       flex-direction: column;
@@ -50,7 +50,6 @@
     }
   }
   &__title {
-    // display: none;
     color: rgb(18, 18, 18);
     margin-left: 10px;
     text-shadow: 0 1px 2px rgb(205, 205, 205);
@@ -159,7 +158,6 @@
     }
     &-listTitle {
       width: 260px;
-      // display: none;
       &--hide {
         display: none;
       }
@@ -173,14 +171,21 @@
   }
 }
 
+
+@media only screen and (max-width: 1024px) and (min-height: 768px) {
+  .List {
+    max-height: calc(100vh - 150px);
+  }
+}
+
 @media only screen and (max-width: 414px) and (min-height: 736px) {
   .List {
-    max-height: 100%;
+    max-height: calc(100vh - 150px);
   }
 }
 
 @media only screen and (max-width: 375px) and (min-height: 667px) {
   .List {
-    max-height: 100%;
+    max-height: calc(100vh - 150px);
   }
 }

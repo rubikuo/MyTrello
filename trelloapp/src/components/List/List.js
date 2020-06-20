@@ -221,55 +221,55 @@ const List = ({ list, lists, setLists }) => {
           />
         )}
       </div>
-     <div className=" List__ctn-cardsWrap">
-      <div className="List__ctn List__ctn-cards">
-        {list.cards.map((c) => {
-          return (
-            <Card
-              key={c["_id"]}
-              card={c}
-              setCard={setCard}
-              cardId={c["_id"]}
-              list={list}
-              lists={lists}
-              setLists={setLists}
-            />
-          );
-        })}
-      </div>
-      <div className="List__ctn List__ctn-add">
-        <button className={addCardClass} onClick={showAddCard}>
-          <MdAdd className="List__icon List__icon-add" />
+      <div className=" List__ctn-cardsWrap">
+        <div className="List__ctn List__ctn-cards">
+          {list.cards.map((c) => {
+            return (
+              <Card
+                key={c["_id"]}
+                card={c}
+                setCard={setCard}
+                cardId={c["_id"]}
+                list={list}
+                lists={lists}
+                setLists={setLists}
+              />
+            );
+          })}
+        </div>
+        <div className="List__ctn List__ctn-add">
+          <button className={addCardClass} onClick={showAddCard}>
+            <MdAdd className="List__icon List__icon-add" />
           Add a card
         </button>
-        <div className={inputCtnClass} ref={addCardCtnRef}>
-          <input
-            className="List__input List__input-cardTitle"
-            type="text"
-            placeholder="Title"
-            name="title"
-            value={card.title}
-            onChange={onCardChange}
-            ref={cardTitleInputRef}
-          />
-          <textarea
-            className="List__input List__input-cardDesc"
-            type="text"
-            placeholder="Description"
-            name="desc"
-            value={card.desc}
-            onChange={onCardChange}
-          />
-          <div className="List__ctn List__ctn-btns">
-            <button className="List__btn List__btn-create" onClick={createCard}>
-              Add Card
+          <div className={inputCtnClass} ref={addCardCtnRef}>
+            <input
+              className="List__input List__input-cardTitle"
+              type="text"
+              placeholder="Title"
+              name="title"
+              value={card.title}
+              onChange={onCardChange}
+              ref={cardTitleInputRef}
+            />
+            <textarea
+              className="List__input List__input-cardDesc"
+              type="text"
+              placeholder="Description"
+              name="desc"
+              value={card.desc}
+              onChange={onCardChange}
+            />
+            <div className="List__ctn List__ctn-btns">
+              <button className="List__btn List__btn-create" onClick={createCard}>
+                Add Card
             </button>
-            <button className="List__btn List__btn-cancel" onClick={hideInput}>
-              Cancel
+              <button className="List__btn List__btn-cancel" onClick={hideInput}>
+                Cancel
             </button>
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </div>
   );

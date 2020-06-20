@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { FaUnlock, FaPen } from "react-icons/fa";
 import MemoHeader from "../Header/Header";
 import CoffeeBg from "../Image/Coffee.svg";
 import TodoListImg from "../Image/TodoLists.svg";
@@ -50,18 +49,17 @@ const Home = () => {
           {user === null ? (
             <>
               <Link to="/login" className="Home__ctn-smlLinks Home__ctn-smlLinks--login">
-                <FaUnlock style={{ margin: "0 5px" }} />{" "}
+
                 <span style={{ margin: "0" }}>Log In</span>
               </Link>
 
               <Link to="/register" className="Home__ctn-smlLinks Home__ctn-smlLinks--register">
-                <FaPen style={{ margin: "0 5px " }} />{" "}
                 <span style={{ margin: "0" }}>Register</span>
               </Link>
             </>
           ) : (
               <Link to="/register" className="Home__ctn-smlLinks Home__ctn-smlLinks--register">
-                <FaPen style={{ margin: "0 5px " }} />{" "}
+
                 <span style={{ margin: "0" }}>Register</span>
               </Link>
             )}

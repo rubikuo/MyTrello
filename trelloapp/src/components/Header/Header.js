@@ -1,5 +1,5 @@
 import React from "react";
-import { FaTrello, FaUnlock, FaPen, FaHome } from "react-icons/fa";
+import { FaTrello, FaHome } from "react-icons/fa";
 import { AiOutlineLogout } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import "./Header.scss";
@@ -26,7 +26,7 @@ const Header = ({ page, logout, user }) => {
             className="Header__btn Header__btn-board"
           >
             {" "}
-            <FaTrello className="Header__icon-logo" /> Boards{" "}
+              Boards{" "}
           </button>
         ) : null}
       </div>
@@ -34,7 +34,7 @@ const Header = ({ page, logout, user }) => {
       {page === "home" && user === null ? null : (
         <div className="Header__ctn Header__ctn-mid">
           <p className="Header__text-logo">
-            <FaTrello className="Header__icon Header__icon-logo" /> MyTrello
+            <FaTrello className="Header__icon Header__icon-logo　Header__icon-logo" /> MyTrello
           </p>
         </div>
       )}
@@ -56,11 +56,11 @@ const Header = ({ page, logout, user }) => {
         ) : page === "register" && user === null ? (
           <Link title="Log In" to="/login" className="Header__link">
             {" "}
-            <FaUnlock className="Header__icon Header__icon-lock" /> Login{" "}
+             Login
           </Link>
         ) : page === "login" ? (
           <Link title="Register" to="/register" className="Header__link">
-            <FaPen className="Header__icon Header__icon-pen" /> Register
+            Register
           </Link>
         ) : page === "home" && user !== null ? <button
           title="Log Out"

@@ -31,13 +31,10 @@
     color: rgb(133, 180, 211);
   }
   &__icon {
-    &-logo,
-    &-lock {
+    &-logo {
       margin-right: 2px;
     }
-    &-pen {
-      margin-right: 3px;
-    }
+
   }
   &__btn {
     display: flex;
@@ -114,24 +111,3 @@
   }
 }
 
-// iphone 6/7/8
-
-@media only screen and (max-width: 375px) and (min-height: 667px) {
-  .Header {
-    &__icon {
-      &-pen {
-        display: none;
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 320px) and (min-height: 568px) {
-  .Header {
-    &__icon {
-      &-pen {
-        display: none;
-      }
-    }
-  }
-}

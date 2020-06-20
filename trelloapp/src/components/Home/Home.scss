@@ -94,7 +94,6 @@
         bottom: -18%;
         left: 28%;
         z-index: 0;
-        // width: 45%;
         transform: rotate(-8deg);
       }
     }
@@ -103,11 +102,18 @@
 
 @media only screen and (max-width: 768px) and (min-height: 1024px) {
   .Home {
-    height: calc(100vh - 255px);
     &__section {
-      width: 85%;
-      margin: 0 auto;
-      top: 12%;
+      width: 100%;
+      left: 0;
+      text-align: center;
+      &-intro {
+        justify-content: center;
+        margin-bottom: 10px;
+        font-size: 1.4rem;
+      }
+      &-title {
+        font-size: 2rem;
+      }
     }
     &__img {
       &-coffee {
@@ -116,7 +122,7 @@
       }
       &-todolist {
         bottom: -7%;
-        left: 10%;
+        left: 0%;
       }
     }
   }
@@ -153,6 +159,21 @@
         transform: rotate(-8deg);
       }
     }
+    &__ctn {
+      &-smlLinks {
+        width: 100%;
+        height: 35px;
+        margin: 15px 0 0 0;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .Home {
+    &__section {
+      margin-top: -15%;
+    }
   }
 }
 
@@ -167,7 +188,7 @@
     }
     &__section {
       padding: 0px;
-      top: 15%;
+      top: 22%;
       &-intro {
         margin-bottom: 10px;
         font-size: 1.4rem;
@@ -190,10 +211,6 @@
 // iphone 6/7/8
 @media only screen and (max-width: 375px) and (min-height: 667px) {
   .Home {
-    height: calc(100vh - 90px);
-    &-loggedIn {
-      height: calc(100vh - 130px);
-    }
     &__section {
       width: 80%;
       margin-top: -15%;
@@ -224,6 +241,21 @@
   }
 }
 
+@media only screen and (max-width: 375px) and (min-height: 812px) {
+  .Home {
+    &__section {
+      margin-top: 15%;
+      &-intro {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+      }
+      &-title {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
 // iphone 5/SE
 @media only screen and (max-width: 320px) and (min-height: 568px) {
   .Home {
@@ -243,7 +275,6 @@
         width: 100%;
         height: 30px;
         margin: 10px 0 0 0;
-        background-color: #026ca5;
         border-radius: 3px;
         font-size: 1rem;
         letter-spacing: 1px;

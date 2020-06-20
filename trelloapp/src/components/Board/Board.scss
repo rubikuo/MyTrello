@@ -1,5 +1,5 @@
 .Board {
-  background-color: rgb(81, 160, 210);
+  background-color: #51a0d2;
   min-height: calc(100vh - 70px);
   &__title {
     height: 35px;
@@ -38,8 +38,7 @@
     &-wrap {
       display: block;
       padding: 10px;
-      background-color: rgb(73, 154, 205);
-      min-height: calc(100vh - 80px);
+      height: calc(100vh - 70px);
     }
     &-header {
       align-items: center;
@@ -120,33 +119,6 @@
       font-size: 1rem;
       font-weight: 700;
       color: rgb(255, 255, 255);
-    }
-  }
-}
-
-@media only screen and (max-width: 414px) and (min-height: 736px) {
-  .Board {
-    &__ctn {
-      &-wrap {
-        height: auto;
-      }
-      &-lists {
-        overflow: scroll;
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 375px) and (min-height: 667px) {
-  .Board {
-    &__ctn {
-      &-wrap {
-        height: auto;
-      }
-      &-lists {
-        // height: 200px;
-        overflow: scroll;
-      }
     }
   }
 }
