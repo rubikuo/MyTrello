@@ -133,6 +133,9 @@
 
 @media only screen and (max-width: 570px) {
   .Home {
+    &__section {
+     text-align: center;
+    }
     &__img {
       &-todolist {
         left: -80px;
