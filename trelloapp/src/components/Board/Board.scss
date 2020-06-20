@@ -35,10 +35,11 @@
   }
   &__ctn {
     display: flex;
+
     &-wrap {
       display: block;
       padding: 10px;
-      background-color: rgb(73, 154, 205);
+      // background-color: rgb(73, 154, 205);
       min-height: calc(100vh - 80px);
     }
     &-header {
@@ -125,20 +126,12 @@
 }
 
 @media only screen and (max-width: 375px) and (min-height: 667px) {
-  .Board{
-    min-height: calc(100vh - 300px);
+  .Board {
     &__ctn {
-      &-wrap {
-       height: 200px;
-        // background-color: white;
-
-      }
       &-lists {
-        height: 100px;
+        height: 200px;
         overflow: scroll;
-
       }
     }
   }
-
 }
