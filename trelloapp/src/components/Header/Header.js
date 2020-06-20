@@ -34,7 +34,7 @@ const Header = ({ page, logout, user }) => {
       {page === "home" && user === null ? null : (
         <div className="Header__ctn Header__ctn-mid">
           <p className="Header__text-logo">
-            <FaTrello className="Header__icon Header__icon-logo　Header__icon-logo" /> MyTrello
+            <FaTrello className="Header__icon　Header__icon-logo" style={{marginRight:"3px"}}/> MyTrello
           </p>
         </div>
       )}

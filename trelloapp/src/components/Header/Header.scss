@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Molle:ital@1&display=swap");
 .Header {
   height: 40px;
   background-color: rgb(3, 106, 167);
@@ -29,12 +30,6 @@
     font-family: "Molle", cursive;
     font-size: 1.3rem;
     color: rgb(133, 180, 211);
-  }
-  &__icon {
-    &-logo {
-      margin-right: 2px;
-    }
-
   }
   &__btn {
     display: flex;
@@ -100,14 +95,4 @@
   }
 }
 
-// iphone 6/7/8 plus
-@media only screen and (max-width: 414px) and (min-height: 736px) {
-  .Header {
-    &__icon {
-      &-pen {
-        display: none;
-      }
-    }
-  }
-}
 
