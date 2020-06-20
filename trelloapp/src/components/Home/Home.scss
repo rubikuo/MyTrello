@@ -64,12 +64,20 @@
       justify-content: center;
       margin: 40px 10px 20px 0px;
       color: rgb(255, 255, 255);
-      background-color: #026ca5;
+
       border-radius: 3px;
       text-decoration: none;
       text-shadow: none;
       letter-spacing: 1px;
       box-shadow: 0px 0px 4px 1px #ffffff;
+      &--login{
+        background-color: #026ca5;
+      }
+      &--register {
+        border: 2px solid #026ca5;
+        color:#026ca5;
+        background-color: white;
+      }
     }
   }
 }

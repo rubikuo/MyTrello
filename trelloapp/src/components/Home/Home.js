@@ -49,12 +49,12 @@ const Home = () => {
           </article>
           {user === null ? (
             <>
-              <Link to="/login" className="Home__ctn-smlLinks">
+              <Link to="/login" className="Home__ctn-smlLinks Home__ctn-smlLinks--login">
                 <FaUnlock style={{ margin: "0 5px" }} />{" "}
                 <span style={{ margin: "0" }}>Log In</span>
               </Link>
 
-              <Link to="/register" className="Home__ctn-smlLinks">
+              <Link to="/register" className="Home__ctn-smlLinks Home__ctn-smlLinks--register">
                 <FaPen style={{ margin: "0 5px " }} />{" "}
                 <span style={{ margin: "0" }}>Register</span>
               </Link>
