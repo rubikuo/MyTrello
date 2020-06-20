@@ -134,6 +134,7 @@
 @media only screen and (max-width: 570px) {
   .Home {
     &__section {
+      margin-top: -10%;
      text-align: center;
     }
     &__img {
@@ -145,6 +146,8 @@
         transform: rotate(-8deg);
       }
     }
+
+
   }
 }
 
