@@ -221,6 +221,7 @@ const List = ({ list, lists, setLists }) => {
           />
         )}
       </div>
+     <div className=" List__ctn-cardsWrap">
       <div className="List__ctn List__ctn-cards">
         {list.cards.map((c) => {
           return (
@@ -268,6 +269,7 @@ const List = ({ list, lists, setLists }) => {
             </button>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

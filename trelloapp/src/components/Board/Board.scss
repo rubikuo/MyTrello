@@ -35,11 +35,10 @@
   }
   &__ctn {
     display: flex;
-
     &-wrap {
       display: block;
       padding: 10px;
-      // background-color: rgb(73, 154, 205);
+      background-color: rgb(73, 154, 205);
       min-height: calc(100vh - 80px);
     }
     &-header {
@@ -60,7 +59,7 @@
     &-lists {
       overflow-x: auto;
       overflow-y: hidden;
-      min-height: 500px;
+      min-height: calc(100vh - 135px);
     }
     &-list {
       display: inline-block;
@@ -125,11 +124,27 @@
   }
 }
 
+@media only screen and (max-width: 414px) and (min-height: 736px) {
+  .Board {
+    &__ctn {
+      &-wrap {
+        height: auto;
+      }
+      &-lists {
+        overflow: scroll;
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 375px) and (min-height: 667px) {
   .Board {
     &__ctn {
+      &-wrap {
+        height: auto;
+      }
       &-lists {
-        height: 200px;
+        // height: 200px;
         overflow: scroll;
       }
     }
