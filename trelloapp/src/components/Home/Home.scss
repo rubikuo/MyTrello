@@ -67,15 +67,23 @@
       text-decoration: none;
       text-shadow: none;
       letter-spacing: 1px;
-      box-shadow: 0px 0px 4px 1px #ffffff;
+      &:hover{
+        background-color: #268bc2;
+        cursor: pointer;
+      }
       &--login {
         background-color: #026ca5;
+        
+    
       }
       &--register {
         border: 2px solid #026ca5;
         color: #026ca5;
         background-color: white;
-        box-shadow: 0px 0px 4px 1px #ffffff;
+        &:hover{
+          color: white;
+        }
+   
       }
     }
   }
@@ -161,9 +169,10 @@
     }
     &__ctn {
       &-smlLinks {
-        width: 100%;
+        width: 40%;
         height: 35px;
-        margin: 15px 0 0 0;
+        margin: 15px;
+
       }
     }
   }

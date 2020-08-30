@@ -92,6 +92,9 @@
     background-color: rgb(85, 151, 194);
     padding: 5px 10px;
     border-radius: 3px;
+    &:hover{
+      background-color: rgb(39, 150, 224);
+    }
   }
 }
 
