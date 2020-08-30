@@ -109,20 +109,21 @@
     }
     &-cancel {
       color: rgb(84, 84, 84);
-      background-color: #f0f0f0;
+      background-color: #ffffff;
       &:hover {
-        background-color: #dedede;
+        background-color: #dddddd;
+        border-color: rgb(170, 170, 170);
       }
     }
     &-create,
     &-remove,
     &-update {
       color: #fff;
-      background-color: #1293d6;
+      background-color: #026ca5;
       border: 1px solid #1293d6;
       margin-left: 10px;
       &:hover {
-        background-color: #2da6e8;
+        background-color: #268bc2;
       }
     }
   }

@@ -39,7 +39,7 @@
 
     &:hover {
       cursor: pointer;
-      background-color: rgb(118, 181, 213);
+      background-color: rgb(106, 178, 236);
     }
     &:focus {
       outline: none;
@@ -78,7 +78,7 @@
       background-color: transparent;
       &:hover {
         background-color: transparent;
-        color: rgb(0, 255, 251);
+        color: rgb(146, 230, 255);
       }
     }
   }
@@ -93,7 +93,7 @@
     padding: 5px 10px;
     border-radius: 3px;
     &:hover{
-      background-color: rgb(39, 150, 224);
+      background-color: rgb(106, 178, 236);
     }
   }
 }

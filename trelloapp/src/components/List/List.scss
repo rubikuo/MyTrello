@@ -131,15 +131,22 @@
     }
     &-create {
       color: #fff;
-      background-color: #1293d6;
+      background-color: #026ca5;
       margin: 0;
       margin-right: 5px;
       padding: 3%;
+      &:hover{
+        background-color: #268bc2;
+      }
     }
     &-cancel {
       color: rgb(84, 84, 84);
       padding: 3%;
       margin: 0;
+      &:hover{
+        background-color: #dddddd;
+        border-color: rgb(170, 170, 170);
+      }
     }
   }
   &__input {
