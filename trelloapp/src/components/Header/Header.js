@@ -62,13 +62,19 @@ const Header = ({ page, logout, user }) => {
           <Link title="Register" to="/register" className="Header__link">
             Register
           </Link>
-        ) : page === "home" && user !== null ? <button
+        ) : page === "home" && user !== null ? 
+        <>
+        <Link title="Register" to="/register" className="Header__link">
+        Register
+      </Link>
+        <button
           title="Log Out"
           className="Header__btn Header__btn-logOut"
           onClick={logout}
         >
           <AiOutlineLogout className=" Header__iconHeader__icon-logOut" />
-        </button> : null}
+        </button>
+        </> : null}
       </div>
     </header>
   );

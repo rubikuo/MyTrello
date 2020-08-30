@@ -43,7 +43,15 @@ const Home = () => {
         <img src={TodoListImg} alt="todolist" className="Home__img-todolist" />
         <section className="Home__section">
           <article>
-            {user === null ? (<> <h1 className="Home__section-title">Welcome to MyTrello</h1> <p className="Home__section-intro">MyTrello’s boards, lists, and cards enable you to organize and prioritize your todos in a fun, flexible, and rewarding way. </p> </>) : (<><h1 className="Home__section-title">Hi ! {user.username}</h1>  <p className="Home__section-intro"> You are currently logged in. <br />May your day be fulfilled with MyTrello! </p></>)}
+            {user === null ? 
+            (<> 
+            <h1 className="Home__section-title">Welcome to MyTrello</h1> 
+            <p className="Home__section-intro">MyTrello’s boards, lists, and cards enable you to organize and prioritize your todos in a fun, flexible, and rewarding way. </p> 
+            </>) 
+            : 
+            (<><h1 className="Home__section-title">Hi ! {user.username}</h1>  
+            <p className="Home__section-intro"> You are currently logged in. <br />May your day be fulfilled with MyTrello! </p></>
+            )}
 
           </article>
           {user === null ? (
@@ -57,12 +65,7 @@ const Home = () => {
                 <span style={{ margin: "0" }}>Register</span>
               </Link>
             </>
-          ) : (
-              <Link to="/register" className="Home__ctn-smlLinks Home__ctn-smlLinks--register">
-
-                <span style={{ margin: "0" }}>Register</span>
-              </Link>
-            )}
+          ) : null}
         </section>
       </div>
     </HelmetProvider>
