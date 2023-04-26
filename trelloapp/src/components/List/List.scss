@@ -24,19 +24,17 @@
       width: 260px;
       margin-left: -10px;
     }
-    &-cardsWrap{
+    &-cardsWrap {
       max-height: calc(100vh - 220px);
-      overflow: scroll;
-      background-color: transparent;
 
+      background-color: transparent;
     }
     &-cards {
       flex-direction: column;
       align-items: center;
     }
     &-input {
-      width: 310px;
-      margin-left: -5px;
+      width: fit-content;
       &--hide {
         display: none;
       }
@@ -135,7 +133,7 @@
       margin: 0;
       margin-right: 5px;
       padding: 3%;
-      &:hover{
+      &:hover {
         background-color: #268bc2;
       }
     }
@@ -143,14 +141,14 @@
       color: rgb(84, 84, 84);
       padding: 3%;
       margin: 0;
-      &:hover{
+      &:hover {
         background-color: #dddddd;
         border-color: rgb(170, 170, 170);
       }
     }
   }
   &__input {
-    width: 300px;
+    width: 290px;
     border-radius: 3px;
     border: none;
     resize: none;
@@ -159,7 +157,7 @@
     line-height: 1rem;
     font-size: 1rem;
     font-weight: 500;
-    margin: 5px 0;
+    margin: 10px 0 0 0;
 
     &:focus {
       outline: none;
@@ -178,7 +176,6 @@
     }
   }
 }
-
 
 @media only screen and (max-width: 1024px) and (min-height: 768px) {
   .List {
