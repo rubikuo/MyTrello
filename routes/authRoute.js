@@ -30,45 +30,47 @@ router.post("/trello/register", (req, res) => {
       repassword,
     });
   } else {
-    Trello.findOne({ email: email }).then((user) => {
-      if (user) {
-        errors.push({ message: "Email already exists" });
-        res.status(409).json({
-          errors,
-          username,
-          email,
-          password,
-          repassword,
-        });
-      } else {
-        const newTrello = new Trello({
-          username,
-          email,
-          password,
-          boards: [],
-        });
-
-        bcrypt.genSalt(10, (err, salt) => {
-          bcrypt.hash(newTrello.password, salt, (err, hash) => {
-            if (err) throw err;
-            newTrello.password = hash;
-            newTrello
-              .save()
-              .then((user) => {
-                req.flash(
-                  "success_msg",
-                  "You are now registered and can log in"
-                );
-                res.status(200).json(user);
-              })
-              .catch((error) => {
-                console.log(error);
-                res.status(500).end();
-              });
+    Trello.findOne({ email: email })
+      .then((user) => {
+        if (user) {
+          errors.push({ message: "Email already exists" });
+          res.status(409).json({
+            errors,
+            username,
+            email,
+            password,
+            repassword,
           });
-        });
-      }
-    });
+        } else {
+          const newTrello = new Trello({
+            username,
+            email,
+            password,
+            boards: [],
+          });
+
+          bcrypt.genSalt(10, (err, salt) => {
+            bcrypt.hash(newTrello.password, salt, (err, hash) => {
+              if (err) throw err;
+              newTrello.password = hash;
+              newTrello
+                .save()
+                .then((user) => {
+                  req.flash(
+                    "success_msg",
+                    "You are now registered and can log in"
+                  );
+                  res.status(200).json(user);
+                })
+                .catch((error) => {
+                  console.log(error);
+                  res.status(500).end();
+                });
+            });
+          });
+        }
+      })
+      .catch((error) => console.error(error));
   }
 });
 
@@ -99,7 +101,6 @@ router.post("/trello/login", function (req, res, next) {
     });
   })(req, res, next);
 });
-
 
 //Logout
 router.post("/trello/logout", (req, res) => {
