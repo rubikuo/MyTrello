@@ -28,7 +28,7 @@ if (process.env.NODE_ENV === "production") {
   console.log("dev", devConnection);
   mongoose
     .connect(devConnection, connectOptions)
-    .then(() => console("connected to Mongo"))
+    .then(() => console.log("connected to Mongo"))
     .catch((error) => console.log(error));
   // make connection instance
   connection = mongoose.createConnection(devConnection, connectOptions);
