@@ -19,7 +19,7 @@ mongoose.Promise = global.Promise;
 if (process.env.NODE_ENV === "production") {
   mongoose
     .connect(prodConnection, connectOptions)
-    .then(() => console("connected to Mongo"))
+    .then(() => console.log("connected to Mongo"))
     .catch((error) => console.log(error));
   console.log("pro", prodConnection);
   // make connection instance
