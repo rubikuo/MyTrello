@@ -70,8 +70,6 @@ const LogIn = () => {
         if (error.response.status === 401) {
           console.log(error.response.data.message);
           setError(error.response.data.message);
-        } else {
-          console.log(JSON.stringify(error));
         }
         if (error.response.status === 500) {
           setError("Internal Server Error");
