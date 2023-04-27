@@ -1,9 +1,8 @@
-
 // 當在develop的狀態下 使用local的ENV file(因為有密碼等資料所以不會上傳到github)
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
-const path = require("path"); 
+const path = require("path");
 const express = require("express");
 const app = express();
 
@@ -20,7 +19,6 @@ const flash = require("express-flash");
 const passport = require("passport");
 /*******  Passport Authentication *****/
 require("./config/passport")(passport);
-
 
 //session Store, to store session's information
 const MongoStore = require("connect-mongo")(session);
@@ -99,19 +97,18 @@ app.use((req, res, next) => {
 app.use("/auth", authRoute);
 app.use("/api", trelloRoute);
 
-if(process.env.NODE_ENV === "production"){
+if (process.env.NODE_ENV === "production") {
   console.log("production!");
   // relative path to build folder in react app
   app.use(express.static(path.join(__dirname + "/trelloapp/build")));
   // relative path to index.html file in react app
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'trelloapp', 'build', 'index.html'));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "trelloapp", "build", "index.html"));
   });
 }
 
 // 這個route 放在production 的設定之後
 app.use("/", baseRoute);
-
 
 app.listen(PORT, () => {
   console.log(`Server is on ${PORT}`);
