@@ -9,7 +9,7 @@
     "server": "nodemon server.js",
     "client": "npm start --prefix trelloapp",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "NPM_CONFIG_PRODUCTION=false npm install --prefix trelloapp && npm run build --prefix trelloapp"
+    "build": "webpack --mode=production"
   },
   "author": "",
   "license": "ISC",
