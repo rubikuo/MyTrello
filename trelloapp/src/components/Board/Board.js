@@ -76,23 +76,26 @@ const Board = () => {
     }
   };
 
-  const editBoardTitle = useCallback((title) => {
-    if (title === "" || title.length > 15) {
-      console.log("hello");
-      getOneBoard();
-      return;
-    }
+  const editBoardTitle = useCallback(
+    (title) => {
+      if (title === "" || title.length > 15) {
+        console.log("hello");
+        getOneBoard();
+        return;
+      }
 
-    axios
-      .patch(`/api/trello/${user["_id"]}/boards/${board["_id"]}/editTitle`, {
-        title: title,
-      })
-      .then((res) => {
-        localStorage.setItem("board", JSON.stringify(res.data));
-        setBoardTitleInput(false);
-      })
-      .catch((error) => console.log(error));
-  }, [board, getOneBoard, user]);
+      axios
+        .patch(`/api/trello/${user["_id"]}/boards/${board["_id"]}/editTitle`, {
+          title: title,
+        })
+        .then((res) => {
+          localStorage.setItem("board", JSON.stringify(res.data));
+          setBoardTitleInput(false);
+        })
+        .catch((error) => console.log(error));
+    },
+    [board, getOneBoard, user]
+  );
 
   let boardTitleClass;
   let boardTitleInputClass;
@@ -109,14 +112,17 @@ const Board = () => {
   const logout = (e) => {
     e.preventDefault();
     console.log("log out");
-    axios.post("/auth/trello/logout").then((response) => {
-      console.log(response.data);
-      if (response.status === 200) {
-        localStorage.setItem("user", null);
-        localStorage.setItem("board", null);
-        setRedirect(true);
-      }
-    });
+    axios
+      .post("/auth/trello/logout")
+      .then((response) => {
+        console.log(response.data);
+        if (response.status === 200) {
+          localStorage.setItem("user", null);
+          localStorage.setItem("board", null);
+          setRedirect(true);
+        }
+      })
+      .catch((error) => console.log(error));
   };
   if (redirect || !board) {
     return <Redirect to="/" />;

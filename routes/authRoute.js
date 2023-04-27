@@ -104,7 +104,15 @@ router.post("/trello/login", function (req, res, next) {
 
 //Logout
 router.post("/trello/logout", (req, res) => {
-  req.logout();
+  req.logout((error) => {
+    if (error) {
+      // Handle any errors that occurred during logout
+      console.error("Error occurred during logout:", error);
+    } else {
+      // Logout was successful
+      console.log("Logout successful!");
+    }
+  });
   req.session.destroy((err) => {
     res.clearCookie("connect.sid");
     res.status(200).json({ message: "logging you out" });
